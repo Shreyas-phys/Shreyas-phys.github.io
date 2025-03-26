@@ -1,73 +1,71 @@
-/* Global Styles */
+/* General styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #fafafa;
     color: #333;
-    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
 }
 
-/* Profile Section Styles */
+/* Landing Page Layout */
+.landing-page {
+    display: flex;
+    margin: 20px;
+}
+
+/* Profile Section */
 .profile-section {
-    width: 30%;
-    float: left;
+    flex: 0 0 30%;
     padding: 20px;
     text-align: center;
 }
 
-.profile-section img.profile-image {
+.profile-section img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    margin-bottom: 20px;
 }
 
 .profile-section h1 {
-    font-size: 24px;
-    margin-top: 10px;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .profile-section p {
-    font-size: 18px;
+    font-size: 16px;
     color: #666;
 }
 
-/* Main Content Styles */
+/* Main Content Section */
 .main-content {
-    width: 65%;
-    float: left;
+    flex: 1;
     padding: 20px;
-    margin-left: 5%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
 }
 
 .main-content h2 {
     font-size: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .main-content h3 {
     font-size: 22px;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.main-content p, .main-content ul {
-    font-size: 18px;
-}
-
-/* Navigation Tabs */
-.navbar {
-    text-align: right;
-    background-color: #333;
-    padding: 10px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    margin: 5px;
+.main-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
     font-size: 16px;
 }
 
-.navbar a:hover {
-    background-color: #555;
+.main-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
 }
