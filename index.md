@@ -15,10 +15,8 @@ title: Home
   
   <h3>Research Interests</h3>
   <p>I focus on the following areas:
-    - Quantum Error Correction
     - Non-equilibrium Dynamics
-    - Quantum Networks
-    - AI Applications in Quantum Computing
+    - Quantum Metrology
   </p>
   
   <h3>Current Projects</h3>
