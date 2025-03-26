@@ -1,4 +1,17 @@
-theme: minima
-title: asdf
+theme: jekyll-theme-slate
+title: "Shreyas's Profile"
 author: Shreyas
-description: personal page 
+description: "Personal page"
+header:
+  logo: /assets/img/logo.png
+  navigation:
+    - title: "Home"
+      url: "/"
+    - title: "Research"
+      url: "/research"
+    - title: "Projects"
+      url: "/projects"
+    - title: "CV"
+      url: "/cv"
+    - title: "Contact"
+      url: "/contact"
