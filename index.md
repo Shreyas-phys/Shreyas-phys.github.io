@@ -20,7 +20,7 @@ I am **Shreyas**, a Computational Quantum Physicist with an interest in **Quantu
 
 ## 📜 Resume & Contact
 - [Download My Resume](cv.pdf)  
-- [GitHub](https://github.com/Shreyas-phys) | [LinkedIn]([https://www.linkedin.com/in/YOUR-LINK](https://www.linkedin.com/in/shreyas-shr/))  
+- [GitHub](https://github.com/Shreyas-phys) | [LinkedIn](https://www.linkedin.com/in/YOUR-LINK](https://www.linkedin.com/in/shreyas-shr/))  
 - Contact: **shreyas.phys@gmail.com**
 
 ## 📖 Blog & Problem Solutions
