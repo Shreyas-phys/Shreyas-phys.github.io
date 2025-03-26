@@ -1,7 +1,7 @@
 theme: jekyll-theme-slate
-title: "Shreyas S"
+title: "Shreyas's Profile"
 author: Shreyas
-description: "Personal page"
+description: Personal Page
 header:
   logo: /assets/img/logo.png
   navigation:
@@ -9,9 +9,9 @@ header:
       url: "/"
     - title: "Research"
       url: "/research"
-    - title: "Projects"
-      url: "/projects"
     - title: "CV"
       url: "/cv"
-    - title: "Contact"
-      url: "/contact"
+    - title: "Projects"
+      url: "/projects"
+    - title: "Physics Problems"
+      url: "/problems"
