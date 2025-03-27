@@ -15,6 +15,7 @@
             padding: 0;
         }
 
+        /* Sidebar */
         .sidebar {
             width: 270px;
             position: fixed;
@@ -25,7 +26,6 @@
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
             text-align: center;
-            overflow: auto; /* Prevent overflow if content is too long */
         }
 
         .sidebar h3 {
@@ -34,12 +34,12 @@
         }
 
         .profile-picture {
-            width: 150px; /* Fixed width */
-            height: 150px; /* Fixed height */
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 3px solid #00bcd4; /* Cyan Border */
+            border: 3px solid #00bcd4;
             margin-bottom: 15px;
-            object-fit: cover; /* Ensure the image fits inside the circle */
+            object-fit: cover;
         }
 
         .sidebar ul {
@@ -62,14 +62,11 @@
             text-decoration: underline;
         }
 
-        .main-content {
-            margin-left: 300px; /* Space for sidebar */
-            padding: 30px;
-        }
-
+        /* Navbar - Adjusted */
         .navbar {
-            background-color: #333; /* Dark Gray */
+            background-color: #333;
             padding: 15px;
+            margin-left: 270px; /* Push navbar right */
         }
 
         .navbar a {
@@ -80,13 +77,19 @@
         }
 
         .navbar a:hover {
-            background-color: #00bcd4; /* Cyan Hover */
+            background-color: #00bcd4;
             color: #000;
             border-radius: 5px;
         }
 
         .navbar .ml-auto {
-            margin-left: auto; /* Moves the CV link to the right */
+            margin-left: auto;
+        }
+
+        /* Main Content - Adjusted */
+        .main-content {
+            margin-left: 270px; /* Push content right */
+            padding: 30px;
         }
     </style>
 </head>
@@ -106,7 +109,7 @@
         </ul>
     </div>
 
-    <!-- Main Content -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,12 +121,13 @@
                     <li class="nav-item"><a class="nav-link" href="Research.html">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="Physics-Problems.html">Physics Problems</a></li>
-                    <li class="nav-item ml-auto"><a class="nav-link" href="CV.html">CV</a></li> <!-- CV is now on the right -->
+                    <li class="nav-item ml-auto"><a class="nav-link" href="CV.html">CV</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Main Content -->
     <div class="main-content">
         <section id="home">
             <h1>Welcome!</h1>
