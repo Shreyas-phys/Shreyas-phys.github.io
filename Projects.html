@@ -7,141 +7,91 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
-        /* Define custom theme color */
+        /* Ensure consistent cyan color */
         :root {
             --primary-color: #007d68;
         }
-
-        /* Apply color styling */
         body {
             font-family: Arial, sans-serif;
         }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Layout: Two columns */
         .container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: flex-start;
             padding: 20px;
         }
-
         .left-column, .right-column {
-            width: 50%;
-            padding: 10px;
+            width: 48%; /* Adjusted for proper spacing */
         }
-
-        /* Make it responsive */
-        @media (max-width: 768px) {
-            .left-column, .right-column {
-                width: 100%;
-            }
-        }
-
-        /* List styling */
-        ul {
+        .left-column ul {
             list-style-type: none;
             padding: 0;
         }
-
-        li {
-            padding: 8px 0;
-            font-size: 18px;
-        }
-
-        /* Research problems (smaller, list-like cards) */
-        .card {
-            display: flex;
-            align-items: center;
-            background: #f9f9f9;
+        .left-column li {
+            background-color: #f8f9fa;
             padding: 10px;
-            border-radius: 8px;
-            border-left: 5px solid var(--primary-color);
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .left-column a {
+            text-decoration: none;
+            color: #007d68;
+            font-weight: bold;
+        }
+        .right-column .card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
             margin-bottom: 10px;
         }
-
-        .card i {
+        .right-column .card i {
             font-size: 30px;
-            color: var(--primary-color);
-            margin-right: 15px;
+            color: #007d68;
+            margin-right: 10px;
         }
-
-        .card-title {
-            font-size: 18px;
-            margin: 0;
-            color: var(--primary-color);
-        }
-
-        .card-text {
-            font-size: 14px;
-            color: #555;
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-column, .right-column {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Left Side: Simple Problems -->
+        <!-- Left Column (Simple Problems) -->
         <div class="left-column">
             <h2>Simple Problems</h2>
             <ul>
-                <li><a href="https://github.com/yourusername/repo1">Problem 1 - Quantum Gates</a></li>
-                <li><a href="https://github.com/yourusername/repo2">Problem 2 - Entanglement</a></li>
-                <li><a href="https://github.com/yourusername/repo3">Problem 3 - Quantum Error Correction</a></li>
-                <li><a href="https://github.com/yourusername/repo4">Problem 4 - Variational Circuits</a></li>
+                <li><a href="https://github.com/your-repo/problem1">Problem 1</a></li>
+                <li><a href="https://github.com/your-repo/problem2">Problem 2</a></li>
+                <li><a href="https://github.com/your-repo/problem3">Problem 3</a></li>
             </ul>
         </div>
 
-        <!-- Right Side: Research Problems -->
+        <!-- Right Column (Research Problems) -->
         <div class="right-column">
             <h2>Research Problems</h2>
-            
             <div class="card">
                 <i class="fas fa-flask"></i>
-                <div>
-                    <h5 class="card-title">Quantum Transport in Long-Range Systems</h5>
-                    <p class="card-text">Investigating non-equilibrium dynamics and cooperative shielding in long-range interacting systems.</p>
+                <div class="card-body">
+                    <h5 class="card-title">Quantum Transport</h5>
+                    <p class="card-text">Exploring many-body localization in driven systems.</p>
                 </div>
             </div>
-
             <div class="card">
                 <i class="fas fa-brain"></i>
-                <div>
-                    <h5 class="card-title">Machine Learning for Quantum Metrology</h5>
-                    <p class="card-text">Using neural networks to optimize phase estimation techniques beyond standard shot-noise limits.</p>
+                <div class="card-body">
+                    <h5 class="card-title">Error-Corrected Repeaters</h5>
+                    <p class="card-text">Investigating fault-tolerant quantum network architectures.</p>
                 </div>
             </div>
-
-            <div class="card">
-                <i class="fas fa-atom"></i>
-                <div>
-                    <h5 class="card-title">Quantum Error-Corrected Repeaters</h5>
-                    <p class="card-text">Developing efficient protocols for mitigating decoherence in quantum networks.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <div>
-                    <h5 class="card-title">Time Crystals in Driven Many-Body Systems</h5>
-                    <p class="card-text">Exploring stability and chaotic effects in time-dependent Hamiltonians.</p>
-                </div>
-            </div>
-
         </div>
     </div>
 
