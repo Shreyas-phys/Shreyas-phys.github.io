@@ -35,7 +35,7 @@
         }
         .left-column a {
             text-decoration: none;
-            color: #007d68;
+            color: var(--primary-color);
             font-weight: bold;
         }
         .right-column .card {
@@ -48,7 +48,7 @@
         }
         .right-column .card i {
             font-size: 30px;
-            color: #007d68;
+            color: var(--primary-color);
             margin-right: 10px;
         }
         /* Mobile Responsiveness */
@@ -60,10 +60,12 @@
                 width: 100%;
             }
         }
+        .navbar {
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,8 +93,6 @@
                 <li><a href="https://github.com/your-repo/problem3">Problem 3</a></li>
             </ul>
         </div>
-
-       
-
+    </div>
 </body>
 </html>
