@@ -70,6 +70,13 @@
         .container {
             margin-top: 50px;
         }
+
+        /* Prevent images from being in list bullets */
+        .no-list-image img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -89,43 +96,35 @@
         </div>
     </nav>
 
-
     <div class="container">
-            <h1>Projects</h1>
+        <h1>Projects</h1>
+        <p>Welcome to the projects section! Explore a selection of projects and my notes in various fields of my interest. Click on the links below to access them</p>
 
-            <p>Welcome to the projects section! Explore a selection of projects and my notes in various fields of my interest. Click on the links below to access them</p>
         <!-- Left Column (Projects) -->
         <div class="left-column">
             <div class="card">
                 <h2>Machine Learning Projects</h2>
                 <ul>
-                    <li><a href="https://wavetulane-my.sharepoint.com/:o:/g/personal/ssadugol_tulane_edu/Eju2dlk0b4NBh6HeoRcojcIBFTv123hP7029ZbWbnHsBgQ?e=XqRNug"> My notes from various resources </a></li>
-                    <li><a href="https://github.com/Shreyas-phys/ML"> Basics</a></li>
-                    <li><a href="https://github.com/Shreyas-phys/ML"> Spatiotemporal Density: Linear Regression from scratch using the normal equation</a></li>
-                    <li><a href="https://github.com/your-repo/neural-networks">Logistric Regression</a></li>
-                    <li><a href="https://github.com/your-repo/reinforcement-learning">Support Vector Machines (SVM) </a></li>
+                    <li><a href="My notes from various resources">My Notes</a></li>
+                    <li><a href="https://github.com/Shreyas-phys/ML">Basics</a></li>
+                    <li>
+                        <a href="https://github.com/Shreyas-phys/spatiotemporal-regression-regularization">Spatiotemporal Density: Linear Regression from scratch using the normal equation</a>
+                        <div class="no-list-image">
+                            <!-- Add the resulting plot image with the full URL -->
+                            <img src="https://github.com/Shreyas-phys/spatiotemporal-regression-regularization/blob/main/results/plots/density_plot.png?raw=true" alt="Spatiotemporal Density Plot">
+                        </div>
+                    </li>
+                    <li><a href="https://github.com/your-repo/neural-networks">Logistic Regression</a></li>
+                    <li><a href="https://github.com/your-repo/reinforcement-learning">Support Vector Machines (SVM)</a></li>
                     <li><a href="https://github.com/your-repo/supervised-learning">k-Nearest Neighbors (k-NN)</a></li>
                     <li><a href="https://github.com/your-repo/unsupervised-learning">Random Forests & Decision Trees</a></li>
                     <li><a href="https://github.com/your-repo/generative-models">Generative Models</a></li>
                 </ul>
             </div>
 
-            <div class="card">
-        <h3>Spatiotemporal Density: Linear Regression from Scratch</h3>
-        <p>This project demonstrates the use of linear regression to fit the first arrival points in a spatiotemporal density map, using the normal equation:</p>
-        <p><strong>The Normal Equation:</strong></p>
-        <p><code>θ = (Xᵀ X)⁻¹ Xᵀ y</code></p>
-        <p>Where:
-        <ul>
-            <li><code>θ</code> is the parameter vector (intercept and slope)</li>
-            <li><code>X</code> is the design matrix, consisting of a column of ones and the input x-values (site indices)</li>
-            <li><code>y</code> is the vector of observed first arrival times</li>
-        </ul>
-        </p>
-        <p>Below is the resulting plot of the spatiotemporal density with the fitted line overlaying the first arrival points:</p>
-        <img src="path_to_your_image.png" alt="Spatiotemporal Density Plot" style="width: 100%; max-width: 600px;">
-    </div>
+            
 
+            <!-- Other project cards -->
             <div class="card">
                 <h2>Estimation Theory Projects</h2>
                 <ul>
@@ -145,8 +144,6 @@
                     <li><a href="https://github.com/your-repo/parameter-estimation">Principal Component Analysis (PCA)</a></li>
                 </ul>
             </div>
-
-            
         </div>
     </div>
 </body>
