@@ -3,156 +3,422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shreyas's Portfolio</title>
+    <meta name="description" content="Shreyas — physicist working on quantum computing, quantum metrology, and the dynamics of quantum many-body systems.">
+    <title>Shreyas | Quantum Physics Research</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e; /* Dark Gray Background */
-            color: #ffffff; /* White Text */
-            margin: 0;
-            padding: 0;
+        :root {
+            --bg: #16181d;
+            --panel: #1f222b;
+            --panel-2: #262a35;
+            --text: #e6e8ee;
+            --muted: #9aa3b2;
+            --accent: #2bb3a0;
+            --accent-dark: #007d68;
+            --border: #2f3442;
         }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: #ffffff; }
 
         /* Sidebar */
         .sidebar {
-            width: 270px;
+            width: 290px;
             position: fixed;
             top: 0;
             left: 0;
-            height: 100%;
-            background-color: #2a2d3e; /* Dark Blue-Gray */
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            height: 100vh;
+            overflow-y: auto;
+            background-color: var(--panel);
+            border-right: 1px solid var(--border);
+            padding: 40px 28px;
             text-align: center;
         }
 
-        .sidebar h3 {
-            color: #007d68; /* Darker Turquoise Accent */
-            margin-top: 10px;
+        .profile-picture {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-dark);
+            object-fit: cover;
+            margin-bottom: 18px;
         }
 
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid #007d68;
-            margin-bottom: 15px;
-            object-fit: cover;
+        .sidebar h3 {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .sidebar .title {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .sidebar .tagline {
+            color: var(--muted);
+            font-size: 0.88rem;
+            margin-bottom: 24px;
         }
 
         .sidebar ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            text-align: left;
         }
 
-        .sidebar li {
-            margin: 10px 0;
+        .sidebar li { margin: 4px 0; }
+
+        .sidebar ul a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
 
-        .sidebar a {
-            color: #007d68;
-            text-decoration: none;
-            font-weight: bold;
+        .sidebar ul a i {
+            width: 18px;
+            text-align: center;
+            color: var(--accent);
         }
 
-        .sidebar a:hover {
+        .sidebar ul a:hover {
+            background-color: var(--panel-2);
             color: #ffffff;
-            text-decoration: underline;
         }
 
-        /* Navbar - Adjusted */
+        /* Navbar */
         .navbar {
-            background-color: #333;
-            padding: 15px;
-            margin-left: 270px; /* Push navbar right */
+            margin-left: 290px;
+            background-color: var(--panel) !important;
+            border-bottom: 1px solid var(--border);
+            padding: 14px 32px;
         }
 
-        .navbar a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            font-weight: bold;
+        .navbar .nav-link {
+            color: var(--muted) !important;
+            font-weight: 600;
+            padding: 8px 16px !important;
+            border-radius: 6px;
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
 
-        .navbar a:hover {
-            background-color: #007d68;
-            color: #000;
-            border-radius: 5px;
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #ffffff !important;
+            background-color: var(--accent-dark);
         }
 
-        .navbar .ml-auto {
-            margin-left: auto;
-        }
-
-        /* Main Content - Adjusted */
+        /* Main content */
         .main-content {
-            margin-left: 270px; /* Push content right */
-            padding: 30px;
+            margin-left: 290px;
+            padding: 56px 64px;
+            max-width: 1040px;
+        }
+
+        .main-content h1 {
+            font-weight: 700;
+            font-size: 2.3rem;
+            margin-bottom: 18px;
+        }
+
+        .main-content h2 {
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-top: 48px;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .lead-text {
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .main-content p { color: #cfd4dd; }
+
+        /* Research interest cards */
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .interest-card {
+            background-color: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+
+        .interest-card h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .interest-card h5 i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        .interest-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* Publications */
+        .pub-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pub-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pub-list li:last-child { border-bottom: none; }
+
+        .pub-title {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .pub-authors {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .pub-authors strong { color: var(--text); }
+
+        .pub-venue {
+            font-size: 0.88rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        /* Collaboration callout */
+        .collab-box {
+            margin-top: 48px;
+            background: linear-gradient(135deg, rgba(0, 125, 104, 0.18), rgba(43, 179, 160, 0.06));
+            border: 1px solid var(--accent-dark);
+            border-radius: 12px;
+            padding: 28px 32px;
+        }
+
+        .collab-box h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .btn-accent {
+            background-color: var(--accent-dark);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .btn-accent:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        footer {
+            margin-top: 56px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .sidebar ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+            }
+            .navbar, .main-content { margin-left: 0; }
+            .main-content { padding: 36px 24px; }
         }
     </style>
 </head>
 <body>
 
     <!-- Sidebar -->
-    <div class="sidebar">
-        <img class="profile-picture" src="./assets/img/profile.jpg" alt="Shreyas's Profile Picture">
+    <aside class="sidebar">
+        <img class="profile-picture" src="./assets/img/profile.jpg" alt="Shreyas">
         <h3>Shreyas</h3>
-        <p>Computational Quantum Physicist | Research in Quantum Computing, Machine Learning, and Physics</p>
+        <div class="title">Ph.D., Physics</div>
+        <p class="tagline">Quantum Computing · Quantum Metrology · Quantum Many-Body Dynamics</p>
         <ul>
-            <li><a href="https://www.linkedin.com/in/shreyas-shr/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-            <li><a href="https://github.com/Shreyas-phys" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-            <li><a href="mailto:shreyas.phys@gmail.com"><i class="fas fa-envelope"></i> Email Me</a></li>
-            <li><a href="https://orcid.org/0000-0002-0458-1856" target="_blank"><i class="fab fa-orcid"></i> ORCID</a></li>
-            <li><a href="https://scholar.google.com/citations?user=Ud4JJe4AAAAJ&hl=en" target="_blank"><i class="fas fa-book-reader"></i> Google Scholar</a></li>
+            <li><a href="mailto:shreyas.phys@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://scholar.google.com/citations?user=Ud4JJe4AAAAJ&hl=en" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0002-0458-1856" target="_blank" rel="noopener"><i class="fab fa-orcid"></i> ORCID</a></li>
+            <li><a href="https://www.linkedin.com/in/shreyas-shr/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://github.com/Shreyas-phys" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
         </ul>
-    </div>
+    </aside>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid px-0">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav gap-2">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="Research.html">Research</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Physics-Problems.html">Problems and Notes</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <main class="main-content">
         <section id="home">
-            <h1>Welcome!</h1>
-            <p>Hi, I’m Shreyas, a PhD candidate at Tulane University specializing in quantum information and many-body physics. I study complex quantum systems using computational methods, numerical algorithms, and increasingly, machine learning tools to better understand quantum behavior. I’m drawn to problems that require patience and creativity, both in research and in everyday life. Outside of work, I enjoy swimming, strength training, and endurance sports, as well as spending time outdoors. These activities help me stay focused and adaptable, and they’ve shaped how I approach long-term challenges with discipline and a steady mindset.
-                This site is still under construction — thanks for stopping by, and feel free to reach out.
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Non-equilibrium dynamics of quantum many-body systems</li>
-                <li>Quantum Metrology and Sensing</li>
-                <li>Quantum Information and Computing</li>
-                <li>Quantum Chaos</li>
-                <li>Many-body Physics</li>
-                <li>Biophysics</li>                
-            </ul>
-
-            <h2>Research Projects</h2>
-            <ul>
-                <li>1D Quantum Spin Systems</li>
-                <li>Quantum Metrology</li>
-                <li>Using Optical Interferometers for measuring biofilm thickness</li>
-                <li>Plasmonics</li>
-            </ul>
-
-            <p>Explore more sections through the navigation bar at the top for detailed information about my research, personal projects and more!</p>
+            <h1>Welcome</h1>
+            <p class="lead-text">
+                Hi, I'm Shreyas, a physicist with a Ph.D. from Tulane University. I'm driven by a simple goal:
+                helping build a quantum computer that is genuinely useful, and finding the problems where it
+                will matter most.
+            </p>
+            <p>
+                My work sits where quantum hardware, quantum information, and many-body physics meet. On one side,
+                I'm interested in what real quantum devices can do, from fault-tolerant simulation and error
+                correction to precision measurement. On the other, I want to use quantum computers and many-body
+                theory to understand emergent phenomena: how collective behavior, information flow, and new
+                phases of matter arise from simple interacting parts. I combine analytical work with large-scale
+                numerics, and I enjoy problems that call for both patience and creativity.
+            </p>
+            <p>
+                Outside of research, I swim, strength train, take on endurance sports, and spend as much time
+                outdoors as I can. Those pursuits have shaped how I approach long-term scientific challenges:
+                with discipline, consistency, and a steady mindset.
+            </p>
         </section>
-    </div>
+
+        <section id="interests">
+            <h2>Research Interests</h2>
+            <div class="interest-grid">
+                <div class="interest-card">
+                    <h5><i class="fas fa-microchip"></i>Quantum Computing &amp; Error Correction</h5>
+                    <p>Fault-tolerant quantum simulation, quantum error correction, decoherence-free subspaces, and resource estimates for near- and long-term hardware.</p>
+                </div>
+                <div class="interest-card">
+                    <h5><i class="fas fa-crosshairs"></i>Quantum Metrology &amp; Sensing</h5>
+                    <p>Phase estimation with entangled photon states in interferometers, and adaptive and non-adaptive measurement strategies.</p>
+                </div>
+                <div class="interest-card">
+                    <h5><i class="fas fa-project-diagram"></i>Long-Range Quantum Systems</h5>
+                    <p>Information propagation, nonlocal light cones, and programmable signal generation in long-range interacting spin chains.</p>
+                </div>
+                <div class="interest-card">
+                    <h5><i class="fas fa-wave-square"></i>Non-Equilibrium Many-Body Dynamics</h5>
+                    <p>Many-body localization, ergodicity breaking, shielding effects, and quantum chaos in interacting quantum systems.</p>
+                </div>
+                <div class="interest-card">
+                    <h5><i class="fas fa-bolt"></i>Quantum State Preparation &amp; Control</h5>
+                    <p>Accelerated state preparation, quantum Mpemba effects, and robustness of control protocols to disorder.</p>
+                </div>
+                <div class="interest-card">
+                    <h5><i class="fas fa-calculator"></i>Computational Quantum Physics</h5>
+                    <p>Exact diagonalization, numerical simulation of quantum dynamics, and machine learning tools for quantum systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <ul class="pub-list">
+                <li>
+                    <div class="pub-title"><a href="https://arxiv.org/abs/2611.08424" target="_blank" rel="noopener">Disorder-blind Mpemba acceleration of quantum state preparation</a></div>
+                    <div class="pub-authors">M. Nishanth, <strong>S. Sadugol</strong>, P. Mahmoudi, A. Yosifov, A. Iyer, R. Ghosh, J. Sun</div>
+                    <div class="pub-venue">arXiv:2611.08424 (2026)</div>
+                </li>
+                <li>
+                    <div class="pub-title"><a href="https://arxiv.org/abs/2607.16116" target="_blank" rel="noopener">Quantum-classical crossover in fault-tolerant quantum dynamics simulation</a></div>
+                    <div class="pub-authors">J. Sun, B. Zhou, J. Xu, Y. Yao, Z. Du, Z. Zhang, Y. Gu, J. Huang, S. Zhou, <em>et al.</em> (incl. <strong>S. Sadugol</strong>)</div>
+                    <div class="pub-venue">arXiv:2607.16116 (2026)</div>
+                </li>
+                <li>
+                    <div class="pub-title">Shaping causality: programmable nonlocal signal generation in long-range spin systems</div>
+                    <div class="pub-authors"><strong>S. Sadugol</strong>, G. L. Celardo, F. Borgonovi, L. Kaplan</div>
+                    <div class="pub-venue">(2026)</div>
+                </li>
+                <li>
+                    <div class="pub-title"><a href="https://arxiv.org/abs/2511.22020" target="_blank" rel="noopener">Shaping Causality: Emergence of Nonlocal Light Cones in Long-Range Quantum Systems</a></div>
+                    <div class="pub-authors"><strong>S. Sadugol</strong>, G. L. Celardo, F. Borgonovi, L. Kaplan</div>
+                    <div class="pub-venue">arXiv:2511.22020 (2025)</div>
+                </li>
+                <li>
+                    <div class="pub-title"><a href="https://arxiv.org/abs/2310.02049" target="_blank" rel="noopener">Quantum metrology in a lossless Mach–Zehnder interferometer using entangled photon inputs for a sequence of non-adaptive and adaptive measurements</a></div>
+                    <div class="pub-authors"><strong>S. Sadugol</strong>, L. Kaplan</div>
+                    <div class="pub-venue">AVS Quantum Science 5 (1) (2023)</div>
+                </li>
+                <li>
+                    <div class="pub-title">Measurement, Transport, and Control of Quantum Information</div>
+                    <div class="pub-authors"><strong>S. Sadugol</strong></div>
+                    <div class="pub-venue">Ph.D. Dissertation, Tulane University (2026)</div>
+                </li>
+            </ul>
+            <p class="mt-3">
+                <a href="https://scholar.google.com/citations?user=Ud4JJe4AAAAJ&hl=en" target="_blank" rel="noopener">Full list on Google Scholar <i class="fas fa-arrow-right"></i></a>
+                &nbsp;·&nbsp;
+                <a href="Research.html">More on my research <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </section>
+
+        <section class="collab-box" id="contact">
+            <h2>Let's Collaborate</h2>
+            <p>
+                I'm always glad to hear about new ideas. If my research overlaps with yours, whether in quantum
+                computing, metrology, or many-body dynamics, I'm happy to collaborate. Feel free to send me a message.
+            </p>
+            <a class="btn btn-accent" href="mailto:shreyas.phys@gmail.com"><i class="fas fa-envelope me-2"></i>Get in touch</a>
+        </section>
+
+        <footer>
+            &copy; 2026 Shreyas
+        </footer>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
